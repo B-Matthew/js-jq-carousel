@@ -16,7 +16,6 @@ function prevClick() {
   console.log("clickprev");
 }
 
-
 function nextClick() {
   var imgNext = $("img.active");
   var imgNot = $(".none");
@@ -40,5 +39,12 @@ function init() {
   $("#prev").click(prevClick);
   $("#next").click(nextClick);
 }
-
 $(document).ready(init);
+
+$(document).keydown(function (eventObject) {
+  if (eventObject.which == 37) {
+    $('#prev').click();
+  } else if (eventObject.which == 39) {
+    $('#next').click();
+  }
+});
